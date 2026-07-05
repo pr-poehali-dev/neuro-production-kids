@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -117,6 +117,8 @@ const Index = () => {
   const [phone, setPhone] = useState('');
   const [telegram, setTelegram] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [programMuted, setProgramMuted] = useState(true);
+  const programVideoRef = useRef<HTMLVideoElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -214,12 +216,24 @@ const Index = () => {
               Подготовка → Производство → Монтаж → Релиз. Ровно тот процесс, по которому работают продакшены по всему миру.
             </p>
           </div>
-          <video
-            src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/videos/logo.mp4"
-            controls
-            playsInline
-            className="w-full sm:w-[280px] rounded-xl border border-border"
-          />
+          <div className="relative w-full sm:w-[280px] rounded-xl overflow-hidden border border-border">
+            <video
+              ref={programVideoRef}
+              src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/videos/logo.mp4"
+              autoPlay
+              muted={programMuted}
+              loop
+              playsInline
+              className="w-full h-full"
+            />
+            <button
+              type="button"
+              onClick={() => setProgramMuted((m) => !m)}
+              className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors"
+            >
+              <Icon name={programMuted ? 'VolumeX' : 'Volume2'} size={18} />
+            </button>
+          </div>
         </div>
 
         <div className="grid gap-px bg-border border border-border rounded-lg overflow-hidden md:grid-cols-2">
