@@ -142,31 +142,45 @@ const Index = () => {
         <div className="absolute inset-0 grain opacity-[0.15] pointer-events-none" />
 
         <div className="container relative z-10 py-24">
-          <div className="max-w-4xl">
-            <div className="reveal flex flex-wrap items-center gap-3 mb-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              <span className="px-3 py-1.5 border border-border rounded-full">Онлайн · 7 дней</span>
-              <span className="px-3 py-1.5 border border-border rounded-full">Дети от 10 лет</span>
-              <span className="px-3 py-1.5 border border-primary/40 rounded-full text-primary">Навыки будущего</span>
+          <div className="grid lg:grid-cols-[1.3fr_auto] gap-12 items-center">
+            <div className="max-w-4xl">
+              <div className="reveal flex flex-wrap items-center gap-3 mb-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="px-3 py-1.5 border border-border rounded-full">Онлайн · 7 дней</span>
+                <span className="px-3 py-1.5 border border-border rounded-full">Дети от 10 лет</span>
+                <span className="px-3 py-1.5 border border-primary/40 rounded-full text-primary">Навыки будущего</span>
+              </div>
+
+              <h1 className="reveal font-display uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
+                Нейро<span className="text-primary">продакшн</span>
+              </h1>
+              <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
+                Создание музыки и видео с помощью ИИ за 7 дней. Ребёнок проходит полный цикл кинопроизводства — от идеи до премьеры готового клипа.
+              </p>
+              <p className="reveal mt-4 text-base text-muted-foreground max-w-xl" style={{ animationDelay: '0.25s' }}>
+                Не «кружок ради галочки», а профессия завтрашнего дня в руках вашего ребёнка уже сегодня.
+              </p>
+
+              <div className="reveal mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.35s' }}>
+                <Button size="lg" onClick={scrollToForm} className="h-14 px-8 text-base font-semibold glow-lime hover:scale-[1.03] transition-transform">
+                  Записаться на интенсив
+                  <Icon name="ArrowRight" size={18} className="ml-2" />
+                </Button>
+                <Button size="lg" variant="outline" onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
+                  Смотреть программу
+                </Button>
+              </div>
             </div>
 
-            <h1 className="reveal font-display uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
-              Нейро<span className="text-primary">продакшн</span>
-            </h1>
-            <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
-              Создание музыки и видео с помощью ИИ за 7 дней. Ребёнок проходит полный цикл кинопроизводства — от идеи до премьеры готового клипа.
-            </p>
-            <p className="reveal mt-4 text-base text-muted-foreground max-w-xl" style={{ animationDelay: '0.25s' }}>
-              Не «кружок ради галочки», а профессия завтрашнего дня в руках вашего ребёнка уже сегодня.
-            </p>
-
-            <div className="reveal mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.35s' }}>
-              <Button size="lg" onClick={scrollToForm} className="h-14 px-8 text-base font-semibold glow-lime hover:scale-[1.03] transition-transform">
-                Записаться на интенсив
-                <Icon name="ArrowRight" size={18} className="ml-2" />
-              </Button>
-              <Button size="lg" variant="outline" onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
-                Смотреть программу
-              </Button>
+            <div className="reveal justify-self-center" style={{ animationDelay: '0.2s' }}>
+              <div className="relative w-[220px] sm:w-[260px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
+                <iframe
+                  src="https://www.youtube.com/embed/1DZ-yf9bVkQ"
+                  title="Нейропродакшн — видео"
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
