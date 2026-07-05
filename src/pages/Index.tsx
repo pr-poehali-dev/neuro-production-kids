@@ -114,12 +114,14 @@ const faq = [
 const Index = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [telegram, setTelegram] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !email.trim()) {
-      toast.error('Заполните имя и email');
+    if (!name.trim() || !email.trim() || !phone.trim()) {
+      toast.error('Заполните имя, email и телефон');
       return;
     }
     setSubmitted(true);
@@ -369,6 +371,19 @@ const Index = () => {
                 placeholder="Email для подтверждения"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                className="h-14 bg-card border-border text-base"
+              />
+              <Input
+                type="tel"
+                placeholder="Телефон"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="h-14 bg-card border-border text-base"
+              />
+              <Input
+                placeholder="Telegram (необязательно)"
+                value={telegram}
+                onChange={(e) => setTelegram(e.target.value)}
                 className="h-14 bg-card border-border text-base"
               />
               <Button type="submit" size="lg" className="w-full h-14 text-base font-semibold glow-lime hover:scale-[1.02] transition-transform">
