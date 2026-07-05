@@ -172,7 +172,7 @@ const Index = () => {
             </div>
 
             <div className="reveal justify-self-center" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-[280px] sm:w-[360px] rounded-2xl overflow-hidden border border-border glow-lime aspect-video">
+              <div className="relative w-[220px] sm:w-[260px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
                 <iframe
                   src="https://www.youtube.com/embed/1DZ-yf9bVkQ"
                   title="Нейропродакшн — видео"
