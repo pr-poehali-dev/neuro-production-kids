@@ -204,14 +204,22 @@ const Index = () => {
 
       {/* PROGRAM */}
       <section id="program" className="container py-24 lg:py-32">
-        <div className="max-w-2xl mb-16">
-          <span className="text-primary uppercase tracking-[0.25em] text-sm">Программа</span>
-          <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-            Пайплайн настоящей киностудии
-          </h2>
-          <p className="text-muted-foreground mt-5 text-lg">
-            Подготовка → Производство → Монтаж → Релиз. Ровно тот процесс, по которому работают продакшены по всему миру.
-          </p>
+        <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-16">
+          <div className="max-w-2xl">
+            <span className="text-primary uppercase tracking-[0.25em] text-sm">Программа</span>
+            <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
+              Пайплайн настоящей киностудии
+            </h2>
+            <p className="text-muted-foreground mt-5 text-lg">
+              Подготовка → Производство → Монтаж → Релиз. Ровно тот процесс, по которому работают продакшены по всему миру.
+            </p>
+          </div>
+          <video
+            src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/videos/logo.mp4"
+            controls
+            playsInline
+            className="w-full sm:w-[280px] rounded-xl border border-border"
+          />
         </div>
 
         <div className="grid gap-px bg-border border border-border rounded-lg overflow-hidden md:grid-cols-2">
