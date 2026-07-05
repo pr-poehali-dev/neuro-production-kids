@@ -216,7 +216,7 @@ const Index = () => {
               Подготовка → Производство → Монтаж → Релиз. Ровно тот процесс, по которому работают продакшены по всему миру.
             </p>
           </div>
-          <div className="relative w-full sm:w-[280px] rounded-xl overflow-hidden border border-border">
+          <div className="relative w-full sm:w-[280px] aspect-square rounded-xl overflow-hidden border border-border">
             <video
               ref={programVideoRef}
               src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/videos/logo.mp4"
@@ -224,7 +224,7 @@ const Index = () => {
               muted={programMuted}
               loop
               playsInline
-              className="w-full h-full"
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <button
               type="button"
