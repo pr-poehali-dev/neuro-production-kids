@@ -329,6 +329,14 @@ const Index = () => {
         <div className="absolute inset-0 grain opacity-[0.12] pointer-events-none" />
         <div className="container py-24 lg:py-32 relative">
           <div className="max-w-xl mx-auto text-center">
+            <video
+              src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/videos/logo.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 rounded-full object-cover"
+            />
             <span className="text-primary uppercase tracking-[0.25em] text-sm">Запись</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
               Дайте ребёнку <span className="text-primary">фору</span> в будущем
