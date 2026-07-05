@@ -174,9 +174,9 @@ const Index = () => {
             <div className="reveal justify-self-center" style={{ animationDelay: '0.2s' }}>
               <div className="relative w-[220px] sm:w-[260px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
                 <iframe
-                  src="https://www.youtube.com/embed/1DZ-yf9bVkQ"
+                  src="https://www.youtube.com/embed/1DZ-yf9bVkQ?modestbranding=1&rel=0&showinfo=0&controls=1&iv_load_policy=3&fs=0&disablekb=1&playsinline=1"
                   title="Нейропродакшн — видео"
-                  className="absolute inset-0 w-full h-full"
+                  className="absolute inset-0 w-full h-full scale-[1.35]"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
