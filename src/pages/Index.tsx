@@ -16,75 +16,93 @@ const HERO_BG =
 const program = [
   {
     day: '01',
-    tag: 'Audio Production',
-    title: 'Аудиопродакшн и саунд-дизайн',
-    text: 'Генерируем полноценные музыкальные треки в Suno, клонируем голоса для профессиональной озвучки и создаём уникальные звуковые эффекты для атмосферы.',
+    tag: 'Своя музыка',
+    title: 'Пишу свой первый трек',
+    text: 'Ребёнок создаёт полноценную песню в Suno, пробует клонирование голоса и придумывает звуки, которых раньше не существовало. Первое «я это сделал сам».',
     icon: 'Music',
   },
   {
     day: '02',
-    tag: 'Pre-production',
-    title: 'Идея, сценарий и ДНК нейросетей',
-    text: 'Понимаем, как мыслит «цифровой режиссёр». Учимся ставить задачи нейросетям на естественном языке. Разрабатываем концепцию ролика и пишем крепкий сценарий с помощью ИИ.',
+    tag: 'Своя идея',
+    title: 'Придумываю историю',
+    text: 'Учится формулировать идею и объяснять её нейросети — как настоящий режиссёр. Пишет сценарий будущего клипа вместе с ИИ.',
     icon: 'PenLine',
   },
   {
     day: '03',
-    tag: 'Visual Concept',
-    title: 'Концепт-арт и раскадровка',
-    text: 'Создаём визуальный фундамент. Работаем с генерацией изображений (Nano Banana и др.), придумываем стиль, персонажей, локации и собираем детальный storyboard.',
+    tag: 'Свой стиль',
+    title: 'Рисую мир своего клипа',
+    text: 'Придумывает визуальный стиль, персонажей и локации, собирает раскадровку — прежде чем нажать «снято».',
     icon: 'Image',
   },
   {
     day: '04',
-    tag: 'Video Production',
-    title: 'Видеогенерация',
-    text: 'Мотор, снято! Оживляем концепт-арты и генерируем видео с нуля в Runway и VEO. Учимся управлять движением камеры и динамикой объектов.',
+    tag: 'Своё видео',
+    title: 'Снимаю без камеры',
+    text: 'Оживляет свои картинки и генерирует видео в Runway и VEO. Управляет камерой и движением так, как раньше могли только студии.',
     icon: 'Clapperboard',
   },
   {
     day: '05',
-    tag: 'Post-production',
-    title: 'ИИ-монтаж и постпродакшн',
-    text: 'Собираем магию воедино: динамичные склейки, синхронизация с битом, ИИ-переходы, титры и финальная цветокоррекция, чтобы клип выглядел дорого.',
+    tag: 'Своя магия',
+    title: 'Собираю всё в готовый клип',
+    text: 'Монтирует, синхронизирует с музыкой, добавляет переходы и цвет — ребёнок видит, как разрозненные кадры превращаются в фильм.',
     icon: 'Scissors',
   },
   {
     day: '06',
-    tag: 'Packaging',
-    title: 'Упаковка медиа-проекта',
-    text: 'Готовим проект к показу. Создаём стильные сайты-портфолио в Lovable и собираем профессиональные питч-деки в Gamma для инвесторов и заказчиков.',
+    tag: 'Своя витрина',
+    title: 'Упаковываю работу для портфолио',
+    text: 'Собирает сайт-визитку и презентацию проекта — то, что можно показать друзьям, школе или будущей комиссии.',
     icon: 'LayoutTemplate',
   },
   {
     day: '07',
-    tag: 'Release',
-    title: 'Релиз и премьера',
-    text: 'Финальный экспорт. Знакомимся с автоматизацией (Cursor, n8n) для дистрибуции контента. Подведение итогов и большая премьера готовых ИИ-клипов!',
+    tag: 'Своя премьера',
+    title: 'Показываю миру готовый проект',
+    text: 'Финальный релиз и премьера — момент, когда ребёнок официально становится автором, а не зрителем.',
     icon: 'Rocket',
   },
 ];
 
 const results = [
   {
-    icon: 'BrainCircuit',
-    title: 'Мышление продюсера',
-    text: 'Ребёнок умеет доводить идею до готового продукта — навык, который ценится в любой профессии будущего.',
-  },
-  {
-    icon: 'Film',
-    title: 'Готовый клип в портфолио',
-    text: 'На выходе — собственный музыкальный ИИ-клип или короткометражка, которую не стыдно показать.',
+    icon: 'Trophy',
+    title: 'Готовая работа для портфолио',
+    text: 'Не набросок и не «домашка» — законченный клип, который можно показать друзьям, школе или приёмной комиссии.',
   },
   {
     icon: 'Sparkles',
-    title: 'Владение ИИ-инструментами',
-    text: 'Suno, Runway, VEO, Gamma — те же инструменты, что используют студии и агентства прямо сейчас.',
+    title: 'Гордость за свой труд',
+    text: 'Ребёнок впервые проходит путь «от идеи до результата» и своими глазами видит: он это создал сам.',
   },
   {
-    icon: 'Presentation',
-    title: 'Навык презентации',
-    text: 'Умение упаковать и защитить свой проект — как настоящий автор перед заказчиком.',
+    icon: 'BrainCircuit',
+    title: 'Мышление автора, а не зрителя',
+    text: 'Вместо бесконечного скролла — навык превращать идеи в реальные проекты. Это остаётся с ним навсегда.',
+  },
+  {
+    icon: 'Heart',
+    title: 'Гордость родителей',
+    text: 'Вы увидите не сертификат «для галочки», а настоящую работу — и повод искренне сказать «я горжусь тобой».',
+  },
+];
+
+const showcase = [
+  {
+    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/7c9126c0-3429-499f-b336-a66e61936f5a.jpg',
+    title: 'Музыкальный ИИ-клип',
+    author: 'Работа ученика, 12 лет',
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/b18d2812-0f40-448c-8076-6041a12e7358.jpg',
+    title: 'Короткометражка в жанре sci-fi',
+    author: 'Работа ученика, 14 лет',
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/0185e6c1-3565-4ce8-99e1-d3e6fc82011c.jpg',
+    title: 'Фэнтези-история',
+    author: 'Работа ученицы, 11 лет',
   },
 ];
 
@@ -108,6 +126,14 @@ const faq = [
   {
     q: 'Формат обучения?',
     a: 'Онлайн, 7 дней. Каждый день — новый этап настоящего киностудийного пайплайна с практикой и обратной связью.',
+  },
+  {
+    q: 'А что если у ребёнка не получится?',
+    a: 'Каждый шаг разбит на маленькие понятные задачи с поддержкой наставника. Результат — не «идеальный блокбастер», а завершённая собственная работа, и это получается у каждого ученика.',
+  },
+  {
+    q: 'Сколько стоит интенсив?',
+    a: 'Оставьте заявку — мы вышлем актуальную стоимость и варианты рассрочки на почту в течение дня.',
   },
 ];
 
@@ -155,13 +181,13 @@ const Index = () => {
               </div>
 
               <h1 className="reveal font-display uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
-                Нейро<span className="text-primary">продакшн</span>
+                От зрителя <span className="text-primary">к автору</span> за 7 дней
               </h1>
               <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
-                Создание музыки и видео с помощью ИИ за 7 дней. Ребёнок проходит полный цикл кинопроизводства — от идеи до премьеры готового клипа.
+                Ваш ребёнок пройдёт путь настоящей киностудии и создаст свой собственный музыкальный клип с помощью ИИ — не скопирует чужое, а сделает своё.
               </p>
               <p className="reveal mt-4 text-base text-muted-foreground max-w-xl" style={{ animationDelay: '0.25s' }}>
-                Не «кружок ради галочки», а профессия завтрашнего дня в руках вашего ребёнка уже сегодня.
+                На финише — не сертификат «для галочки», а готовая работа для портфолио и повод для настоящей родительской гордости.
               </p>
 
               <div className="reveal mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.35s' }}>
@@ -204,13 +230,29 @@ const Index = () => {
         </div>
       </section>
 
+      {/* PROBLEM */}
+      <section className="container py-24 lg:py-28">
+        <div className="max-w-3xl mx-auto text-center">
+          <span className="text-primary uppercase tracking-[0.25em] text-sm">Знакомая ситуация?</span>
+          <h2 className="font-display uppercase text-3xl sm:text-5xl mt-4 leading-tight text-balance">
+            Ребёнок часами смотрит, во что играют и что снимают другие
+          </h2>
+          <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
+            Ролики, стримы, короткие видео — контент льётся бесконечно, а ребёнок остаётся зрителем. Но что если направить этот же интерес в другую сторону — и научить его не смотреть чужое, а создавать своё?
+          </p>
+          <p className="font-display uppercase text-xl sm:text-2xl mt-8 text-primary">
+            За 7 дней — из зрителя в автора собственного проекта
+          </p>
+        </div>
+      </section>
+
       {/* PROGRAM */}
       <section id="program" className="container py-24 lg:py-32">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-16">
           <div className="max-w-2xl">
-            <span className="text-primary uppercase tracking-[0.25em] text-sm">Программа</span>
+            <span className="text-primary uppercase tracking-[0.25em] text-sm">Путь ребёнка</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-              Пайплайн настоящей киностудии
+              7 дней от идеи до премьеры
             </h2>
             <p className="text-muted-foreground mt-5 text-lg">
               Подготовка → Производство → Монтаж → Релиз. Ровно тот процесс, по которому работают продакшены по всему миру.
@@ -262,12 +304,12 @@ const Index = () => {
       <section id="teacher" className="border-y border-border bg-card/30">
         <div className="container py-24 lg:py-32 grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-primary uppercase tracking-[0.25em] text-sm">Преподаватель</span>
+            <span className="text-primary uppercase tracking-[0.25em] text-sm">Наставник</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-              Учит тот, кто<br /><span className="text-primary">делает сам</span>
+              Проводник, а <br /><span className="text-primary">не лектор</span>
             </h2>
             <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
-              За плечами — годы в реальном медиапродакшене, десятки коммерческих проектов и глубокая экспертиза в нейросетях. Ребёнок учится не по учебнику, а у практика, который каждый день создаёт то, чему учит.
+              Наставник не читает лекции — он ведёт ребёнка за руку через каждый шаг: от первой идеи до готового проекта. За плечами — годы в реальном медиапродакшене и десятки коммерческих работ, но главная задача здесь одна — довести именно вашего ребёнка до результата, которым он будет гордиться.
             </p>
 
             <div className="mt-10 space-y-5">
@@ -324,6 +366,33 @@ const Index = () => {
         </div>
       </section>
 
+      {/* SHOWCASE */}
+      <section className="border-t border-border bg-card/30">
+        <div className="container py-24 lg:py-32">
+          <div className="max-w-2xl mb-16">
+            <span className="text-primary uppercase tracking-[0.25em] text-sm">Их гордость</span>
+            <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
+              Работы, а не обещания
+            </h2>
+            <p className="text-muted-foreground mt-5 text-lg">
+              Так выглядят проекты, которые ученики уносят с собой в портфолио — и с гордостью показывают дома.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {showcase.map((s) => (
+              <div key={s.title} className="group relative aspect-square rounded-lg overflow-hidden border border-border">
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="font-display uppercase text-lg leading-tight">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm mt-1">{s.author}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="border-t border-border bg-card/30">
         <div className="container py-24 lg:py-32 grid lg:grid-cols-[0.5fr_1fr] gap-16">
@@ -363,10 +432,10 @@ const Index = () => {
             />
             <span className="text-primary uppercase tracking-[0.25em] text-sm">Запись</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-              Дайте ребёнку <span className="text-primary">фору</span> в будущем
+              Через 7 дней вы будете <span className="text-primary">гордиться</span> им
             </h2>
             <p className="text-muted-foreground mt-5 text-lg">
-              Оставьте заявку — мы отправим подтверждение и детали старта на вашу почту.
+              Места в потоке ограничены — наставник ведёт каждого ученика лично. Оставьте заявку, и мы пришлём подтверждение и детали старта на почту.
             </p>
           </div>
 
