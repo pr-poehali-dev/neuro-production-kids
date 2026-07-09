@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -163,6 +163,13 @@ const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [programMuted, setProgramMuted] = useState(true);
   const programVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const el = programVideoRef.current;
+    if (!el) return;
+    el.muted = programMuted;
+    el.play().catch(() => {});
+  }, [programMuted]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
