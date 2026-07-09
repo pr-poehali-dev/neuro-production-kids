@@ -106,6 +106,24 @@ const showcase = [
   },
 ];
 
+const testimonials = [
+  {
+    text: 'Я плакала на премьере. Сын всегда был "тем, кто смотрит видео", а тут вдруг встал и показал СВОЁ. Своими руками, свою историю. Это было как будто я увидела его повзрослевшим за одну неделю.',
+    name: 'Марина',
+    role: 'мама Тимура, 12 лет',
+  },
+  {
+    text: 'Дочь показала клип бабушке — и та смотрела молча, а потом обняла её со слезами. Такого отклика я не ожидала ни от одного кружка за три года. Она теперь называет себя "режиссёром".',
+    name: 'Елена',
+    role: 'мама Софии, 11 лет',
+  },
+  {
+    text: 'Честно, записывали от отчаяния — сын целыми днями сидел в телефоне. А через неделю он с горящими глазами объяснял мне, что такое раскадровка. Впервые за долгое время я гордился им так открыто.',
+    name: 'Дмитрий',
+    role: 'папа Артёма, 13 лет',
+  },
+];
+
 const faq = [
   {
     q: 'Нужен ли ребёнку опыт в видео или программировании?',
@@ -390,6 +408,33 @@ const Index = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="container py-24 lg:py-32">
+        <div className="max-w-2xl mb-16">
+          <span className="text-primary uppercase tracking-[0.25em] text-sm">Отзывы родителей</span>
+          <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
+            Их слова говорят громче
+          </h2>
+        </div>
+        <div className="grid lg:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <div
+              key={t.name}
+              className={`border border-border rounded-lg p-8 lg:p-10 flex flex-col ${i === 1 ? 'lg:scale-[1.05] bg-primary text-primary-foreground border-primary glow-lime' : 'bg-card'}`}
+            >
+              <Icon name="Quote" size={32} className={i === 1 ? 'opacity-70 mb-6' : 'text-primary/40 mb-6'} />
+              <p className={`font-display text-xl sm:text-2xl leading-snug text-balance flex-1 ${i === 1 ? '' : ''}`}>
+                {t.text}
+              </p>
+              <footer className={`mt-8 pt-6 border-t ${i === 1 ? 'border-primary-foreground/20' : 'border-border'}`}>
+                <div className="font-semibold">{t.name}</div>
+                <div className={`text-sm uppercase tracking-[0.1em] mt-1 ${i === 1 ? 'opacity-80' : 'text-muted-foreground'}`}>{t.role}</div>
+              </footer>
+            </div>
+          ))}
         </div>
       </section>
 
