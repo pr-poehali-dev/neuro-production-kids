@@ -479,11 +479,11 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden border border-border glow-lime">
+            <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border border-border glow-lime">
               <img
                 src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/35671561-9666-4b7f-ae0d-7f1531143933.jpeg"
                 alt="Основатель интенсива"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
             <blockquote className="mt-8 border-l-2 border-primary pl-8 py-2">
