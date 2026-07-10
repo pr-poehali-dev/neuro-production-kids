@@ -115,23 +115,43 @@ function VideoWorkCard({
   orientation: 'vertical' | 'horizontal';
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(true);
 
   const toggle = () => {
     const el = videoRef.current;
     if (!el) return;
     if (playing) {
       el.pause();
-      setPlaying(false);
     } else {
       el.muted = false;
       el.play().catch(() => {});
-      setPlaying(true);
     }
+  };
+
+  useEffect(() => {
+    if (!playing) {
+      setShowOverlay(true);
+      return;
+    }
+    const t = setTimeout(() => setShowOverlay(false), 1200);
+    return () => clearTimeout(t);
+  }, [playing]);
+
+  const handleContainerClick = () => {
+    if (playing) setShowOverlay((v) => !v);
+  };
+
+  const handleFullscreen = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    containerRef.current?.requestFullscreen?.();
   };
 
   return (
     <div
+      ref={containerRef}
+      onClick={handleContainerClick}
       className={`relative rounded-lg overflow-hidden border border-border bg-black ${
         orientation === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
       }`}
@@ -146,18 +166,36 @@ function VideoWorkCard({
         className="w-full h-full object-cover"
       />
       {(title || author) && (
-        <>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+        <div
+          className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${
+            playing && !showOverlay ? 'opacity-0' : 'opacity-100'
+          }`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-5">
             <h3 className="font-display uppercase text-lg leading-tight">{title}</h3>
             <p className="text-muted-foreground text-sm mt-1">{author}</p>
           </div>
-        </>
+        </div>
       )}
       <button
         type="button"
-        onClick={toggle}
-        className="absolute inset-0 flex items-center justify-center bg-background/20 hover:bg-background/30 transition-colors"
+        onClick={handleFullscreen}
+        className={`absolute top-3 right-3 w-10 h-10 rounded-full bg-background/60 hover:bg-background/80 flex items-center justify-center transition-opacity duration-500 ${
+          playing && !showOverlay ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        <Icon name="Maximize" size={18} />
+      </button>
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          toggle();
+        }}
+        className={`absolute inset-0 flex items-center justify-center bg-background/20 hover:bg-background/30 transition-opacity duration-500 ${
+          playing && !showOverlay ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`}
       >
         <span className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
           <Icon name={playing ? 'Pause' : 'Play'} size={28} className={playing ? '' : 'ml-1'} />
