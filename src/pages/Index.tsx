@@ -324,6 +324,9 @@ const Index = () => {
                 <Button size="lg" variant="outline" onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
                   Смотреть программу
                 </Button>
+                <Button size="lg" variant="outline" onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
+                  Смотреть работы учеников
+                </Button>
               </div>
             </div>
 
@@ -535,7 +538,7 @@ const Index = () => {
       </section>
 
       {/* SHOWCASE */}
-      <section className="border-t border-border bg-card/30">
+      <section id="showcase" className="border-t border-border bg-card/30">
         <div className="container py-24 lg:py-32">
           <div className="max-w-2xl mb-16">
             <span className="text-primary uppercase tracking-[0.25em] text-sm">Их гордость</span>
