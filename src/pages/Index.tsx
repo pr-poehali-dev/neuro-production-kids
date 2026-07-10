@@ -152,7 +152,7 @@ function VideoWorkCard({
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className={`relative rounded-lg overflow-hidden border border-border bg-black ${
+      className={`relative rounded-lg overflow-hidden border border-border bg-black w-auto h-[380px] sm:h-[480px] lg:h-[560px] ${
         orientation === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
       }`}
     >
@@ -544,7 +544,7 @@ const Index = () => {
               Так выглядят проекты, которые ученики уносят с собой в портфолио — и с гордостью показывают дома.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-6 items-start">
+          <div className="flex flex-col items-center gap-10">
             {videoWorks.map((v) => (
               <VideoWorkCard
                 key={v.src}
