@@ -90,6 +90,11 @@ const results = [
 
 const showcase = [
   {
+    video: '/videos/showcase-clip.mp4',
+    title: 'Ролики детей',
+    author: 'Работа ученика',
+  },
+  {
     img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/7c9126c0-3429-499f-b336-a66e61936f5a.jpg',
     title: 'Музыкальный ИИ-клип',
     author: 'Работа ученика, 12 лет',
@@ -406,7 +411,18 @@ const Index = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {showcase.map((s) => (
               <div key={s.title} className="group relative aspect-square rounded-lg overflow-hidden border border-border">
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                {s.video ? (
+                  <video
+                    src={s.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="font-display uppercase text-lg leading-tight">{s.title}</h3>
