@@ -479,7 +479,14 @@ const Index = () => {
           </div>
 
           <div className="relative">
-            <blockquote className="border-l-2 border-primary pl-8 py-2">
+            <div className="rounded-2xl overflow-hidden border border-border glow-lime">
+              <img
+                src="https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/bucket/35671561-9666-4b7f-ae0d-7f1531143933.jpeg"
+                alt="Основатель интенсива"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <blockquote className="mt-8 border-l-2 border-primary pl-8 py-2">
               <p className="font-display text-2xl sm:text-3xl leading-snug text-balance">
                 «Через пять лет умение управлять нейросетями будет так же базово, как умение печатать. Мы даём детям это преимущество раньше остальных.»
               </p>
