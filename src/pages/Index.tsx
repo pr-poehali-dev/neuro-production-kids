@@ -106,6 +106,65 @@ const showcase = [
   },
 ];
 
+const videoWorks = [
+  {
+    src: '/videos/showcase-clip.mp4',
+    title: 'Летний влог',
+    author: 'Работа ученика',
+  },
+  {
+    src: '/videos2/showcase-clip-2.mp4',
+    title: 'Приключенческий клип',
+    author: 'Работа ученика',
+  },
+];
+
+function VideoWorkCard({ src, title, author }: { src: string; title: string; author: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [playing, setPlaying] = useState(false);
+
+  const toggle = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (playing) {
+      el.pause();
+      setPlaying(false);
+    } else {
+      el.muted = false;
+      el.play().catch(() => {});
+      setPlaying(true);
+    }
+  };
+
+  return (
+    <div className="relative aspect-[9/16] rounded-lg overflow-hidden border border-border bg-black">
+      <video
+        ref={videoRef}
+        src={src}
+        playsInline
+        loop
+        onPause={() => setPlaying(false)}
+        onPlay={() => setPlaying(true)}
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+        <h3 className="font-display uppercase text-lg leading-tight">{title}</h3>
+        <p className="text-muted-foreground text-sm mt-1">{author}</p>
+      </div>
+      <button
+        type="button"
+        onClick={toggle}
+        className="absolute inset-0 flex items-center justify-center bg-background/20 hover:bg-background/30 transition-colors"
+      >
+        <span className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+          <Icon name={playing ? 'Pause' : 'Play'} size={28} className={playing ? '' : 'ml-1'} />
+        </span>
+      </button>
+    </div>
+  );
+}
+
 const testimonials = [
   {
     text: 'Я плакала на премьере. Сын всегда был "тем, кто смотрит видео", а тут вдруг встал и показал СВОЁ. Своими руками, свою историю. Это было как будто я увидела его повзрослевшим за одну неделю.',
@@ -163,8 +222,6 @@ const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [programMuted, setProgramMuted] = useState(true);
   const programVideoRef = useRef<HTMLVideoElement>(null);
-  const [showcasePlaying, setShowcasePlaying] = useState(false);
-  const showcaseVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const el = programVideoRef.current;
@@ -418,33 +475,10 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="mt-16 max-w-sm mx-auto">
-            <div className="relative aspect-[9/16] rounded-lg overflow-hidden border border-border bg-black">
-              <video
-                ref={showcaseVideoRef}
-                src="/videos/showcase-clip.mp4"
-                playsInline
-                loop
-                className="w-full h-full object-cover"
-              />
-              {!showcasePlaying && (
-                <button
-                  type="button"
-                  onClick={() => {
-                    const el = showcaseVideoRef.current;
-                    if (!el) return;
-                    el.muted = false;
-                    el.play().catch(() => {});
-                    setShowcasePlaying(true);
-                  }}
-                  className="absolute inset-0 flex items-center justify-center bg-background/30 hover:bg-background/40 transition-colors"
-                >
-                  <span className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
-                    <Icon name="Play" size={28} className="ml-1" />
-                  </span>
-                </button>
-              )}
-            </div>
+          <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            {videoWorks.map((v) => (
+              <VideoWorkCard key={v.src} src={v.src} title={v.title} author={v.author} />
+            ))}
           </div>
         </div>
       </section>
