@@ -90,11 +90,6 @@ const results = [
 
 const showcase = [
   {
-    video: '/videos/showcase-clip.mp4',
-    title: 'Ролики детей',
-    author: 'Работа ученика',
-  },
-  {
     img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/7c9126c0-3429-499f-b336-a66e61936f5a.jpg',
     title: 'Музыкальный ИИ-клип',
     author: 'Работа ученика, 12 лет',
@@ -168,6 +163,8 @@ const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [programMuted, setProgramMuted] = useState(true);
   const programVideoRef = useRef<HTMLVideoElement>(null);
+  const [showcasePlaying, setShowcasePlaying] = useState(false);
+  const showcaseVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const el = programVideoRef.current;
@@ -411,18 +408,7 @@ const Index = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {showcase.map((s) => (
               <div key={s.title} className="group relative aspect-square rounded-lg overflow-hidden border border-border">
-                {s.video ? (
-                  <video
-                    src={s.video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                ) : (
-                  <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                )}
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="font-display uppercase text-lg leading-tight">{s.title}</h3>
@@ -430,6 +416,35 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 max-w-sm mx-auto">
+            <div className="relative aspect-[9/16] rounded-lg overflow-hidden border border-border bg-black">
+              <video
+                ref={showcaseVideoRef}
+                src="/videos/showcase-clip.mp4"
+                playsInline
+                loop
+                className="w-full h-full object-cover"
+              />
+              {!showcasePlaying && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const el = showcaseVideoRef.current;
+                    if (!el) return;
+                    el.muted = false;
+                    el.play().catch(() => {});
+                    setShowcasePlaying(true);
+                  }}
+                  className="absolute inset-0 flex items-center justify-center bg-background/30 hover:bg-background/40 transition-colors"
+                >
+                  <span className="w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                    <Icon name="Play" size={28} className="ml-1" />
+                  </span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>
