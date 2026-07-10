@@ -152,8 +152,10 @@ function VideoWorkCard({
     <div
       ref={containerRef}
       onClick={handleContainerClick}
-      className={`relative rounded-lg overflow-hidden border border-border bg-black w-auto h-[380px] sm:h-[480px] lg:h-[560px] ${
-        orientation === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
+      className={`relative rounded-lg overflow-hidden border border-border bg-black ${
+        orientation === 'vertical'
+          ? 'w-[220px] sm:w-[280px] lg:w-[320px] aspect-[9/16]'
+          : 'h-[220px] sm:h-[280px] lg:h-[320px] aspect-video'
       }`}
     >
       <video
