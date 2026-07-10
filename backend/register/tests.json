@@ -1,0 +1,26 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Missing fields",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "", "email": "", "phone": ""},
+      "expectedStatus": 400
+    },
+    {
+      "name": "Successful registration",
+      "method": "POST",
+      "path": "/",
+      "body": {"name": "Тест Тестов", "email": "test@example.com", "phone": "+79990000000", "telegram": "@test"},
+      "expectedStatus": 200,
+      "expectedBody": {"success": true},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

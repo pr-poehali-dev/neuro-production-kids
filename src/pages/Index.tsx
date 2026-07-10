@@ -272,14 +272,29 @@ const Index = () => {
     el.play().catch(() => {});
   }, [programMuted]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !phone.trim()) {
       toast.error('Заполните имя, email и телефон');
       return;
     }
-    setSubmitted(true);
-    toast.success('Заявка принята! Проверьте почту для подтверждения.');
+    setIsSubmitting(true);
+    try {
+      const res = await fetch('https://functions.poehali.dev/cceeb029-3d43-44bb-96e4-c656f1287ba2', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, telegram }),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+      toast.success('Заявка принята! Мы свяжемся с вами в ближайшее время.');
+    } catch {
+      toast.error('Не удалось отправить заявку. Попробуйте ещё раз.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToForm = () => {
@@ -676,9 +691,9 @@ const Index = () => {
                 onChange={(e) => setTelegram(e.target.value)}
                 className="h-14 bg-card border-border text-base"
               />
-              <Button type="submit" size="lg" className="w-full h-14 text-base font-semibold glow-lime hover:scale-[1.02] transition-transform">
-                Записаться на интенсив
-                <Icon name="ArrowRight" size={18} className="ml-2" />
+              <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-14 text-base font-semibold glow-lime hover:scale-[1.02] transition-transform">
+                {isSubmitting ? 'Отправляем...' : 'Записаться на интенсив'}
+                {!isSubmitting && <Icon name="ArrowRight" size={18} className="ml-2" />}
               </Button>
               <p className="text-xs text-muted-foreground text-center pt-2">
                 Нажимая кнопку, вы соглашаетесь с обработкой персональных данных
