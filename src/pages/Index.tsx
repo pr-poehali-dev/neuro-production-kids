@@ -91,8 +91,8 @@ const results = [
 const videoWorks = [
   {
     src: '/videos/showcase-clip.mp4',
-    title: '',
-    author: '',
+    title: 'Создано на марафоне НЕЙРОпродакшн',
+    author: 'Андрей, 12 лет',
     orientation: 'vertical' as const,
   },
   {
