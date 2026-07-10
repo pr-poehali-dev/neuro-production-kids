@@ -97,8 +97,8 @@ const videoWorks = [
   },
   {
     src: '/videos2/showcase-clip-2.mp4',
-    title: '',
-    author: '',
+    title: 'Создано на марафоне НЕЙРОпродакшн',
+    author: 'Полина, 14 лет',
     orientation: 'horizontal' as const,
   },
 ];
