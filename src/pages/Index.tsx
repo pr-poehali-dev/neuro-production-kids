@@ -316,17 +316,19 @@ const Index = () => {
                 На финише — не сертификат «для галочки», а готовая работа для портфолио и повод для настоящей родительской гордости.
               </p>
 
-              <div className="reveal mt-10 flex flex-col sm:flex-row gap-4" style={{ animationDelay: '0.35s' }}>
-                <Button size="lg" onClick={scrollToForm} className="h-14 px-8 text-base font-semibold glow-lime hover:scale-[1.03] transition-transform">
+              <div className="reveal mt-10 flex flex-col gap-4" style={{ animationDelay: '0.35s' }}>
+                <Button size="lg" onClick={scrollToForm} className="h-14 px-8 text-base font-semibold glow-lime hover:scale-[1.03] transition-transform w-fit">
                   Записаться на интенсив
                   <Icon name="ArrowRight" size={18} className="ml-2" />
                 </Button>
-                <Button size="lg" variant="outline" onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
-                  Смотреть программу
-                </Button>
-                <Button size="lg" variant="outline" onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
-                  Смотреть работы учеников
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button size="lg" variant="outline" onClick={() => document.getElementById('showcase')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
+                    Смотреть работы учеников
+                  </Button>
+                  <Button size="lg" variant="outline" onClick={() => document.getElementById('program')?.scrollIntoView({ behavior: 'smooth' })} className="h-14 px-8 text-base border-border bg-transparent hover:bg-secondary">
+                    Смотреть программу
+                  </Button>
+                </div>
               </div>
             </div>
 
