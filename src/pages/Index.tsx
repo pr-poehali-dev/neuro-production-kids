@@ -88,38 +88,32 @@ const results = [
   },
 ];
 
-const showcase = [
-  {
-    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/7c9126c0-3429-499f-b336-a66e61936f5a.jpg',
-    title: 'Музыкальный ИИ-клип',
-    author: 'Работа ученика, 12 лет',
-  },
-  {
-    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/b18d2812-0f40-448c-8076-6041a12e7358.jpg',
-    title: 'Короткометражка в жанре sci-fi',
-    author: 'Работа ученика, 14 лет',
-  },
-  {
-    img: 'https://cdn.poehali.dev/projects/b5c18b42-9c2b-4b90-aeb9-19f35261f023/files/0185e6c1-3565-4ce8-99e1-d3e6fc82011c.jpg',
-    title: 'Фэнтези-история',
-    author: 'Работа ученицы, 11 лет',
-  },
-];
-
 const videoWorks = [
   {
     src: '/videos/showcase-clip.mp4',
-    title: 'Летний влог',
-    author: 'Работа ученика',
+    title: '',
+    author: '',
+    orientation: 'vertical' as const,
   },
   {
     src: '/videos2/showcase-clip-2.mp4',
-    title: 'Приключенческий клип',
-    author: 'Работа ученика',
+    title: '',
+    author: '',
+    orientation: 'horizontal' as const,
   },
 ];
 
-function VideoWorkCard({ src, title, author }: { src: string; title: string; author: string }) {
+function VideoWorkCard({
+  src,
+  title,
+  author,
+  orientation,
+}: {
+  src: string;
+  title: string;
+  author: string;
+  orientation: 'vertical' | 'horizontal';
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
 
@@ -137,7 +131,11 @@ function VideoWorkCard({ src, title, author }: { src: string; title: string; aut
   };
 
   return (
-    <div className="relative aspect-[9/16] rounded-lg overflow-hidden border border-border bg-black">
+    <div
+      className={`relative rounded-lg overflow-hidden border border-border bg-black ${
+        orientation === 'vertical' ? 'aspect-[9/16]' : 'aspect-video'
+      }`}
+    >
       <video
         ref={videoRef}
         src={src}
@@ -147,11 +145,15 @@ function VideoWorkCard({ src, title, author }: { src: string; title: string; aut
         onPlay={() => setPlaying(true)}
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
-        <h3 className="font-display uppercase text-lg leading-tight">{title}</h3>
-        <p className="text-muted-foreground text-sm mt-1">{author}</p>
-      </div>
+      {(title || author) && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 p-5 pointer-events-none">
+            <h3 className="font-display uppercase text-lg leading-tight">{title}</h3>
+            <p className="text-muted-foreground text-sm mt-1">{author}</p>
+          </div>
+        </>
+      )}
       <button
         type="button"
         onClick={toggle}
@@ -462,22 +464,15 @@ const Index = () => {
               Так выглядят проекты, которые ученики уносят с собой в портфолио — и с гордостью показывают дома.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {showcase.map((s) => (
-              <div key={s.title} className="group relative aspect-square rounded-lg overflow-hidden border border-border">
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="font-display uppercase text-lg leading-tight">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">{s.author}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-6 items-start">
             {videoWorks.map((v) => (
-              <VideoWorkCard key={v.src} src={v.src} title={v.title} author={v.author} />
+              <VideoWorkCard
+                key={v.src}
+                src={v.src}
+                title={v.title}
+                author={v.author}
+                orientation={v.orientation}
+              />
             ))}
           </div>
         </div>
