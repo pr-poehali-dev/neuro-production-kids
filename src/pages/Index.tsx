@@ -258,7 +258,7 @@ const Index = () => {
         <div className="absolute inset-0 grain opacity-[0.15] pointer-events-none" />
 
         <div className="container relative z-10 py-24">
-          <div className="grid lg:grid-cols-[1.3fr_auto] gap-12 items-center">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
             <div className="max-w-4xl">
               <div className="reveal flex flex-wrap items-center gap-3 mb-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 <span className="px-3 py-1.5 border border-border rounded-full">Онлайн · 7 дней</span>
@@ -270,7 +270,7 @@ const Index = () => {
                 От зрителя <span className="text-primary">к автору</span> за 7 дней
               </h1>
               <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
-                Ваш ребёнок пройдёт путь настоящей киностудии и создаст свой собственный музыкальный клип с помощью ИИ — не скопирует чужое, а сделает своё.
+                Ваш ребёнок своими руками создаст клип, придумает персонажа, напишет музыку и оживит анимацию с помощью ИИ — и увидит своё имя в титрах готовой работы.
               </p>
               <p className="reveal mt-4 text-base text-muted-foreground max-w-xl" style={{ animationDelay: '0.25s' }}>
                 На финише — не сертификат «для галочки», а готовая работа для портфолио и повод для настоящей родительской гордости.
@@ -288,7 +288,7 @@ const Index = () => {
             </div>
 
             <div className="reveal justify-self-center" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-[220px] sm:w-[260px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
+              <div className="relative w-[280px] sm:w-[340px] lg:w-[380px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
                 <iframe
                   src="https://www.youtube.com/embed/1DZ-yf9bVkQ"
                   title="Нейропродакшн — видео"
@@ -428,6 +428,48 @@ const Index = () => {
               </footer>
             </blockquote>
           </div>
+        </div>
+      </section>
+
+      {/* TRUST */}
+      <section className="container py-24 lg:py-32">
+        <div className="max-w-2xl mb-16">
+          <span className="text-primary uppercase tracking-[0.25em] text-sm">Спокойствие родителей</span>
+          <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
+            Почему это безопасно доверить нам
+          </h2>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              icon: 'ShieldCheck',
+              title: 'Только безопасные ИИ-сервисы',
+              text: 'Работаем в проверенных инструментах с настроенной модерацией контента — без случайных роликов и чужого мусора в ленте.',
+            },
+            {
+              icon: 'UserCheck',
+              title: 'Живой наставник на каждом занятии',
+              text: 'Ребёнок никогда не остаётся один на один с нейросетью — рядом всегда взрослый с опытом реального медиапродакшена.',
+            },
+            {
+              icon: 'MessagesSquare',
+              title: 'Отчёт для родителей после каждого дня',
+              text: 'Вы видите прогресс и результат ребёнка на каждом этапе, а не получаете сюрприз в последний день.',
+            },
+            {
+              icon: 'RotateCcw',
+              title: 'Гарантия возврата',
+              text: 'Если после первого занятия почувствуете, что не подходит — вернём деньги без лишних вопросов.',
+            },
+          ].map((t) => (
+            <div key={t.title} className="border border-border rounded-lg p-8 hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center text-primary mb-6">
+                <Icon name={t.icon} size={24} />
+              </div>
+              <h3 className="font-display uppercase text-lg mb-3 leading-tight">{t.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{t.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
