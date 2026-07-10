@@ -264,6 +264,20 @@ const Index = () => {
   const [submitted, setSubmitted] = useState(false);
   const [programMuted, setProgramMuted] = useState(true);
   const programVideoRef = useRef<HTMLVideoElement>(null);
+  const [heroPlaying, setHeroPlaying] = useState(false);
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleHeroPlay = () => {
+    const el = heroVideoRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play();
+      setHeroPlaying(true);
+    } else {
+      el.pause();
+      setHeroPlaying(false);
+    }
+  };
 
   useEffect(() => {
     const el = programVideoRef.current;
@@ -348,14 +362,38 @@ const Index = () => {
             </div>
 
             <div className="reveal justify-self-center" style={{ animationDelay: '0.2s' }}>
-              <div className="relative w-[280px] sm:w-[340px] lg:w-[380px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16]">
-                <iframe
-                  src="https://www.youtube.com/embed/1DZ-yf9bVkQ"
-                  title="Нейропродакшн — видео"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+              <div className="relative w-[280px] sm:w-[340px] lg:w-[380px] rounded-2xl overflow-hidden border border-border glow-lime aspect-[9/16] group">
+                <video
+                  ref={heroVideoRef}
+                  src="/hero-media/hero-video.mp4"
+                  playsInline
+                  onPlay={() => setHeroPlaying(true)}
+                  onPause={() => setHeroPlaying(false)}
+                  onEnded={() => setHeroPlaying(false)}
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
+                {!heroPlaying && (
+                  <button
+                    type="button"
+                    onClick={toggleHeroPlay}
+                    className="absolute inset-0 flex items-center justify-center bg-black/20"
+                    aria-label="Смотреть видео"
+                  >
+                    <span className="w-16 h-16 rounded-full bg-background/90 border border-border flex items-center justify-center text-foreground">
+                      <Icon name="Play" size={26} className="ml-1" />
+                    </span>
+                  </button>
+                )}
+                {heroPlaying && (
+                  <button
+                    type="button"
+                    onClick={toggleHeroPlay}
+                    className="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-background/80 border border-border flex items-center justify-center text-foreground hover:bg-background transition-colors"
+                    aria-label="Пауза"
+                  >
+                    <Icon name="Pause" size={18} />
+                  </button>
+                )}
               </div>
             </div>
           </div>
