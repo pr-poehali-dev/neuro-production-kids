@@ -91,12 +91,14 @@ const results = [
 const videoWorks = [
   {
     src: '/videos/showcase-clip.mp4',
+    poster: '/posters/showcase-clip-poster.jpg',
     title: 'Создано на марафоне НЕЙРОпродакшн',
     author: 'Андрей, 12 лет',
     orientation: 'vertical' as const,
   },
   {
     src: '/videos2/showcase-clip-2.mp4',
+    poster: '/posters/showcase-clip-2-poster.jpg',
     title: 'Создано на марафоне НЕЙРОпродакшн',
     author: 'Полина, 14 лет',
     orientation: 'horizontal' as const,
@@ -105,11 +107,13 @@ const videoWorks = [
 
 function VideoWorkCard({
   src,
+  poster,
   title,
   author,
   orientation,
 }: {
   src: string;
+  poster?: string;
   title: string;
   author: string;
   orientation: 'vertical' | 'horizontal';
@@ -161,8 +165,10 @@ function VideoWorkCard({
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         playsInline
         loop
+        preload="metadata"
         onPause={() => setPlaying(false)}
         onPlay={() => setPlaying(true)}
         className="w-full h-full object-cover"
@@ -620,6 +626,7 @@ const Index = () => {
               <VideoWorkCard
                 key={v.src}
                 src={v.src}
+                poster={v.poster}
                 title={v.title}
                 author={v.author}
                 orientation={v.orientation}
