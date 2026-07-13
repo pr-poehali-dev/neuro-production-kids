@@ -605,7 +605,7 @@ const Index = () => {
           <div className="max-w-2xl mb-16">
             <span className="text-primary uppercase tracking-[0.25em] text-sm">Их гордость</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-              Работы, а не обещания
+              Готовые работы выпускников интенсива
             </h2>
             <p className="text-muted-foreground mt-5 text-lg">
               Так выглядят проекты, которые ученики уносят с собой в портфолио — и с гордостью показывают дома.
