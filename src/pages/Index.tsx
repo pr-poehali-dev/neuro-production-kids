@@ -374,7 +374,7 @@ const Index = () => {
                 <span className="px-3 py-1.5 border border-primary/40 rounded-full text-primary">Навыки будущего</span>
               </div>
 
-              <h1 className="reveal font-display uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
+              <h1 className="reveal font-display uppercase leading-[1.15] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
                 Первая готовая работа в <span className="text-primary">профессии будущего</span> за 7 дней
               </h1>
               <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
