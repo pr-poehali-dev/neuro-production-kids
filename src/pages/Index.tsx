@@ -346,7 +346,7 @@ const Index = () => {
               </div>
 
               <h1 className="reveal font-display uppercase leading-[0.95] text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight" style={{ animationDelay: '0.05s' }}>
-                От зрителя <span className="text-primary">к автору</span> за 7 дней
+                Первая готовая работа в <span className="text-primary">профессии будущего</span> за 7 дней
               </h1>
               <p className="reveal mt-6 text-xl sm:text-2xl text-foreground/90 max-w-2xl text-balance" style={{ animationDelay: '0.15s' }}>
                 Ваш ребёнок своими руками создаст клип, придумает персонажа, напишет музыку и оживит анимацию с помощью ИИ — и увидит своё имя в титрах готовой работы.
