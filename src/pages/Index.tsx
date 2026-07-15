@@ -453,22 +453,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PROBLEM */}
-      <section className="container py-24 lg:py-28">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="text-primary uppercase tracking-[0.25em] text-sm">Знакомая ситуация?</span>
-          <h2 className="font-display uppercase text-3xl sm:text-5xl mt-4 leading-tight text-balance">
-            Ребёнок часами смотрит, во что играют и что снимают другие
-          </h2>
-          <p className="text-muted-foreground mt-6 text-lg leading-relaxed">
-            Ролики, стримы, короткие видео — контент льётся бесконечно, а ребёнок остаётся зрителем. Но что если направить этот же интерес в другую сторону — и научить его не смотреть чужое, а создавать своё?
-          </p>
-          <p className="font-display uppercase text-xl sm:text-2xl mt-8 text-primary">
-            За 7 дней — из зрителя в автора собственного проекта
-          </p>
-        </div>
-      </section>
-
       {/* PROGRAM */}
       <section id="program" className="container py-24 lg:py-32">
         <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-end mb-16">
