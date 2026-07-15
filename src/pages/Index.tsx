@@ -617,7 +617,7 @@ const Index = () => {
         <div className="max-w-2xl mb-16">
           <span className="text-primary uppercase tracking-[0.25em] text-sm">Результат</span>
           <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-            Что ребёнок приобретает за 7 дней интенсива
+            Что <span className="text-primary">ребёнок приобретает</span> за 7 дней интенсива
           </h2>
         </div>
 
