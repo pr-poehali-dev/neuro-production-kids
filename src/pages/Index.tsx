@@ -65,27 +65,56 @@ const program = [
   },
 ];
 
-const results = [
+const professions = [
   {
-    icon: 'Trophy',
-    title: 'Готовая работа для портфолио',
-    text: 'Не набросок и не «домашка» — законченный клип, который можно показать друзьям, школе или приёмной комиссии.',
+    emoji: '🎬',
+    title: 'AI Video Creator',
+    text: 'Создает рекламные ролики, музыкальные клипы, короткометражные фильмы и контент для YouTube и социальных сетей. Объединяет сценарий, визуал, музыку и анимацию в готовый видеопроект.',
   },
   {
-    icon: 'Sparkles',
-    title: 'Гордость за свой труд',
-    text: 'Ребёнок впервые проходит путь «от идеи до результата» и своими глазами видит: он это создал сам.',
+    emoji: '🎨',
+    title: 'AI Concept Artist',
+    text: 'Разрабатывает персонажей, окружение и визуальные концепции для игр, мультфильмов, фильмов и цифровых проектов.',
   },
   {
-    icon: 'BrainCircuit',
-    title: 'Мышление автора, а не зрителя',
-    text: 'Вместо бесконечного скролла — навык превращать идеи в реальные проекты. Это остаётся с ним навсегда.',
+    emoji: '🎥',
+    title: 'Motion Designer',
+    text: 'Оживляет изображения, создает анимацию, визуальные эффекты, заставки и динамичные видеоролики.',
   },
   {
-    icon: 'Heart',
-    title: 'Гордость родителей',
-    text: 'Вы увидите не сертификат «для галочки», а настоящую работу — и повод искренне сказать «я горжусь тобой».',
+    emoji: '✂️',
+    title: 'Video Editor (Видео-монтажер)',
+    text: 'Собирает готовый фильм из отдельных сцен, выстраивает темп, ритм и последовательность повествования, добавляет музыку и эффекты.',
   },
+  {
+    emoji: '🎵',
+    title: 'AI Music Creator',
+    text: 'Создает оригинальное музыкальное сопровождение для фильмов, игр, рекламы, подкастов и цифровых проектов.',
+  },
+  {
+    emoji: '📱',
+    title: 'Digital Content Creator',
+    text: 'Разрабатывает современный контент для YouTube, TikTok, Instagram и других цифровых платформ, сочетая видео, графику, звук и сторителлинг.',
+  },
+  {
+    emoji: '🕹',
+    title: 'Narrative Designer',
+    text: 'Придумывает сюжеты, персонажей и игровые миры для видеоигр, интерактивных проектов и анимации.',
+  },
+  {
+    emoji: '🚀',
+    title: 'AI Creative Producer',
+    text: 'Организует весь процесс создания проекта: превращает идею в готовый продукт, координируя работу с визуалом, музыкой, анимацией и монтажом.',
+  },
+];
+
+const outcomeChecklist = [
+  'Создает свой первый законченный музыкальный клип.',
+  'Осваивает полный цикл производства цифрового проекта — от идеи до премьеры.',
+  'Получает первые практические навыки работы с современными AI-инструментами.',
+  'Учится превращать собственные идеи в законченный результат.',
+  'Начинает понимать, какие творческие направления ему наиболее интересны.',
+  'Формирует первое цифровое портфолио, которое станет отправной точкой для дальнейшего обучения и развития.',
 ];
 
 const videoWorks = [
@@ -588,19 +617,64 @@ const Index = () => {
         <div className="max-w-2xl mb-16">
           <span className="text-primary uppercase tracking-[0.25em] text-sm">Результат</span>
           <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-            Что ребёнок унесёт с собой
+            Что ребёнок приобретает за 7 дней интенсива
           </h2>
         </div>
+
+        <div className="max-w-3xl">
+          <h3 className="font-display uppercase text-2xl sm:text-3xl leading-tight mb-6">
+            Это не просто интенсив по нейросетям
+          </h3>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-5">
+            За 7 дней ребенок проходит полный творческий путь создания собственного музыкального клипа — от первой идеи до премьерного показа готовой работы.
+          </p>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-5">
+            Он не просто изучает современные AI-инструменты. Он пробует себя в разных творческих ролях: сценариста, художника, композитора, аниматора, монтажера и режиссера проекта.
+          </p>
+          <p className="text-muted-foreground text-lg leading-relaxed mb-5">
+            Такой опыт помогает понять, что именно увлекает ребенка больше всего, какие задачи ему действительно интересны и в каком направлении он захочет развиваться дальше.
+          </p>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            В результате ребенок получает не только новые навыки, но и свою первую законченную работу, которую можно включить в цифровое портфолио.
+          </p>
+        </div>
+
+        <div className="max-w-3xl mt-20 mb-12">
+          <h3 className="font-display uppercase text-2xl sm:text-3xl leading-tight mb-6">
+            Первый шаг к профессиям будущего
+          </h3>
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Во время интенсива ребенок знакомится с современными направлениями цифрового творчества и получает первые практические навыки, которые используются в работе специалистов по всему миру.
+          </p>
+        </div>
+
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {results.map((r) => (
-            <div key={r.title} className="border border-border rounded-lg p-8 hover:border-primary/50 transition-colors">
-              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center text-accent mb-6">
-                <Icon name={r.icon} size={24} />
+          {professions.map((p) => (
+            <div key={p.title} className="border border-border rounded-lg p-8 hover:border-primary/50 transition-colors">
+              <div className="w-12 h-12 rounded-md bg-accent/10 flex items-center justify-center text-2xl mb-6">
+                {p.emoji}
               </div>
-              <h3 className="font-display uppercase text-xl mb-3 leading-tight">{r.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{r.text}</p>
+              <h3 className="font-display uppercase text-lg mb-3 leading-tight">{p.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{p.text}</p>
             </div>
           ))}
+        </div>
+
+        <div className="max-w-3xl mt-20">
+          <h3 className="font-display uppercase text-2xl sm:text-3xl leading-tight mb-8">
+            Что получает ребенок за 7 дней
+          </h3>
+          <ul className="space-y-4 mb-10">
+            {outcomeChecklist.map((item) => (
+              <li key={item} className="flex items-start gap-3 text-lg text-foreground/90">
+                <Icon name="Check" size={22} className="text-primary shrink-0 mt-0.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-muted-foreground text-lg leading-relaxed border-t border-border pt-8">
+            Неделя интенсива поможет понять, какие современные творческие направления ребенку наиболее интересны, и станет первым шагом к осознанному выбору будущей профессии.
+          </p>
         </div>
       </section>
 
