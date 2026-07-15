@@ -771,7 +771,7 @@ const Index = () => {
             />
             <span className="text-primary uppercase tracking-[0.25em] text-sm">Запись</span>
             <h2 className="font-display uppercase text-4xl sm:text-6xl mt-4 leading-none">
-              Возможно, именно здесь начнется его путь в мир <span className="text-primary">цифрового творчества</span>
+              Возможно, именно здесь начнется путь вашего ребёнка в мир <span className="text-primary">цифрового творчества</span>
             </h2>
             <p className="text-muted-foreground mt-5 text-lg">
               Запишитесь на бесплатную консультацию. Мы расскажем, как проходит интенсив, и поможем понять, подходит ли он вашему ребенку.
