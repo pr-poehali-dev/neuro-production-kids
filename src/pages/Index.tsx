@@ -807,7 +807,7 @@ const Index = () => {
                 className="h-14 bg-card border-border text-base"
               />
               <Button type="submit" size="lg" disabled={isSubmitting} className="w-full h-14 text-base font-semibold glow-lime hover:scale-[1.02] transition-transform">
-                {isSubmitting ? 'Отправляем...' : 'Записаться на интенсив'}
+                {isSubmitting ? 'Отправляем...' : 'Записаться на консультацию'}
                 {!isSubmitting && <Icon name="ArrowRight" size={18} className="ml-2" />}
               </Button>
               <p className="text-xs text-muted-foreground text-center pt-2">
